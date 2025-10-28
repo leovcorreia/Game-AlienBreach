@@ -7,14 +7,14 @@ public class GameState {
     private Integer lives;
     private Integer score;
     private Integer level;
-    private Double pelletsCollected;
+    private Integer pelletsCollected;
     private String screen;
     private boolean isGameOver;
 
     public GameState() {
     }
 
-    public GameState(Long gameId, Player player, Integer lives, Integer score, Integer level, Double pelletsCollected, String screen, boolean isGameOver) {
+    public GameState(Long gameId, Player player, Integer lives, Integer score, Integer level, Integer pelletsCollected, String screen, boolean isGameOver) {
         this.gameId = gameId;
         this.player = player;
         this.lives = lives;
@@ -65,11 +65,11 @@ public class GameState {
         this.level = level;
     }
 
-    public Double getPelletsCollected() {
+    public Integer getPelletsCollected() {
         return pelletsCollected;
     }
 
-    public void setPelletsCollected(Double pelletsCollected) {
+    public void setPelletsCollected(Integer pelletsCollected) {
         this.pelletsCollected = pelletsCollected;
     }
 
