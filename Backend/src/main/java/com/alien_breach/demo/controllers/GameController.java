@@ -46,7 +46,7 @@ public class GameController {
     }
 
     @PostMapping("/state")
-    public ResponseEntity<GameState> state(
+    public ResponseEntity<GameState> stateScreen(
             @RequestParam Long gameId,
             @RequestParam String screen) {
         GameState updated = gameService.updateScreen(gameId, screen);
