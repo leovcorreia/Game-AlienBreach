@@ -6,18 +6,6 @@ from button \
 def get_font(size):
     return pygame.font.Font("assets/font.ttf", size)
 
-def render_multiline_text(text, font, color, max_width):
-    lines = text.split('\n')
-    rendered_lines = []
-    y_offset = 0
-
-    for line in lines:
-        rendered_line = font.render(line, True, color)
-        rendered_lines.append((rendered_line, y_offset))
-        y_offset += rendered_line.get_height()
-
-    return rendered_lines
-
 def play():
     pygame.display.set_caption("Play")
 
@@ -191,5 +179,6 @@ if __name__ == '__main__':
     pygame.display.set_caption("Menu")
 
     BG = pygame.image.load("assets/Background.png")
+
 
     main_menu()
