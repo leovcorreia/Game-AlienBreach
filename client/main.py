@@ -42,8 +42,20 @@ def help():
 
         SCREEN.fill("white")
 
-        HELP_TEXT = get_font(45).render("This is the HELP screen.", True, "Black")
-        HELP_RECT = HELP_TEXT.get_rect(center=(640, 260))
+        HELP_TEXT = get_font(20).render("How to play the game:", True, "Black")
+        HELP_RECT = HELP_TEXT.get_rect(topleft=(100, 75))
+        SCREEN.blit(HELP_TEXT, HELP_RECT)
+        HELP_TEXT = get_font(20).render("W / ↑ : Move up", True, "Black")
+        HELP_RECT = HELP_TEXT.get_rect(topleft=(100, 200))
+        SCREEN.blit(HELP_TEXT, HELP_RECT)
+        HELP_TEXT = get_font(20).render("A / ← : Move left", True, "Black")
+        HELP_RECT = HELP_TEXT.get_rect(topleft=(100, 275))
+        SCREEN.blit(HELP_TEXT, HELP_RECT)
+        HELP_TEXT = get_font(20).render("D / → : Move right", True, "Black")
+        HELP_RECT = HELP_TEXT.get_rect(topleft=(100, 350))
+        SCREEN.blit(HELP_TEXT, HELP_RECT)
+        HELP_TEXT = get_font(20).render("S / ↓ : Move down", True, "Black")
+        HELP_RECT = HELP_TEXT.get_rect(topleft=(100, 425))
         SCREEN.blit(HELP_TEXT, HELP_RECT)
 
         HELP_BACK = Button(image=None, pos=(640, 650), 
@@ -77,19 +89,20 @@ def about():
         ABOUT_RECT2 = ABOUT_TEXT2.get_rect(center=(640, 150))
         SCREEN.blit(ABOUT_TEXT2, ABOUT_RECT2)
         ABOUT_TEXT3 = get_font(20).render("Leonardo Venâncio Correia RA129266", True, "Black")
-        ABOUT_RECT3 = ABOUT_TEXT3.get_rect(center=(640, 225))
+        ABOUT_RECT3 = ABOUT_TEXT3.get_rect(center=(640, 200))
         SCREEN.blit(ABOUT_TEXT3, ABOUT_RECT3)
+        # ----------- info da disciplina -----------
         ABOUT_TEXT4 = get_font(20).render("Disciplina de Sistemas Distribuídos", True, "Black")
-        ABOUT_RECT4 = ABOUT_TEXT4.get_rect(center=(640, 300))
+        ABOUT_RECT4 = ABOUT_TEXT4.get_rect(center=(640, 350))
         SCREEN.blit(ABOUT_TEXT4, ABOUT_RECT4)
         ABOUT_TEXT5 = get_font(20).render("Curso de Ciência da Computação", True, "Black")
-        ABOUT_RECT5 = ABOUT_TEXT5.get_rect(center=(640, 375))
+        ABOUT_RECT5 = ABOUT_TEXT5.get_rect(center=(640, 400))
         SCREEN.blit(ABOUT_TEXT5, ABOUT_RECT5)
         ABOUT_TEXT6 = get_font(20).render("Departamento de Informática - Centro de Tecnologia", True, "Black")
         ABOUT_RECT6 = ABOUT_TEXT6.get_rect(center=(640, 450))
         SCREEN.blit(ABOUT_TEXT6, ABOUT_RECT6)
         ABOUT_TEXT7 = get_font(20).render("Universidade Estadual de Maringá", True, "Black")
-        ABOUT_RECT7 = ABOUT_TEXT7.get_rect(center=(640, 525))
+        ABOUT_RECT7 = ABOUT_TEXT7.get_rect(center=(640, 500))
         SCREEN.blit(ABOUT_TEXT7, ABOUT_RECT7)
 
         ABOUT_BACK = Button(image=None, pos=(640, 650), 
@@ -133,11 +146,11 @@ def main_menu():
                 ))
 
     while True:
-        SCREEN.blit(BG, (0,0))
+        SCREEN.fill("Black")
 
         MENU_MOUSE_POS = pygame.mouse.get_pos()
 
-        MENU_TEXT = get_font(75).render("MAIN MENU", True, "#b68f40") # change color as needed
+        MENU_TEXT = get_font(75).render("MAIN MENU", True, "#3ddc1d") # change color as needed
         MENU_RECT = MENU_TEXT.get_rect(center=(640, 100))
 
         PLAY_BUTTON = Button(image=scaled_play, pos=(640, 250), 
@@ -178,7 +191,6 @@ if __name__ == '__main__':
     SCREEN = pygame.display.set_mode((1280, 720), pygame.RESIZABLE)
     pygame.display.set_caption("Menu")
 
-    BG = pygame.image.load("assets/Background.png")
-
+    # BG = pygame.image.load("assets/Background.png")
 
     main_menu()
